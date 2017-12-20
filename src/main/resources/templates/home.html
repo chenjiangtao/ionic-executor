@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <link href="../static/css/styles.css" th:href="@{css/styles.css}" rel="stylesheet" media="screen"/>
+</head>
+<body class="background" style="background: url('../static/img/background.png') no-repeat center center fixed;">
+<!--th:style="'background: url(' + @{/img/background.png} + ') no-repeat center center fixed;'">-->
+
+<nav class="navbar">
+    <div class="container-fluid">
+        IONIC EXCEUTOR
+    </div>
+    <div>
+        <ul class="navbar-header pull-right">
+            <a id="gitpull" href="javascript:void(0);" class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-ok"></span>
+                git pull</a>
+            <a id="release" href="javascript:void(0);" class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-ok"></span>
+                仅打包</a>
+            <a id="add-platform-release" href="javascript:void(0);" class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-ok"></span>
+                删除platform并重新打包</a>
+            <a id="rmall" href="javascript:void(0);" class="btn btn-danger btn-sm">
+                <span class="glyphicon glyphicon-warning-sign"></span>
+                删除node_module</a>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h2 class="centered">ionic打包器:</h2>
+        <div>
+            下载：<a href="android-release.apk" download="android-release.apk" >android-release.apk</a>
+        </div>
+        <fieldset>
+            <h3>添加cordova和npm包</h3>
+            <div class="form-group">
+                <textarea id="commands" class="form-control" placeholder="install or rm package" name="commands" rows="5"></textarea>
+            </div>
+            <a id="exec-cmd-bt" class="btn btn-lg btn-success btn-block" >执行命令</a>
+            <div id="exec-result"></div>
+        </fieldset>
+</div>
+</body>
+<script src="webjars/jquery/2.1.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="../static/js/home.js" th:src="@{js/home.js}"></script>
+</html>
