@@ -29,7 +29,7 @@ public class UserController {
         StringBuffer msg = new StringBuffer();
         logger.info("EXEC ACTION---->>>>" + action);
         String cpApk = "&&cp platforms/android/build/outputs/apk/android-release.apk " +
-                "/Users/jiangtao/IdeaProjects/ionicexecutor/src/main/resources/static&&" +
+                "/Users/jiangtao/IdeaProjects/ionicexecutor/target/classes/static&&" +
                 "echo 打包并拷贝完成，请回页首下载！";
         String gitInfo = "&&git branch -v";
 
