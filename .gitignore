@@ -26,3 +26,4 @@ hs_err_pid*
 .idea/
 ionic-executor.iml
 target/
+android-release.apk

@@ -100,10 +100,14 @@ public class ExecuteShellComandTest {
 
     @Test
     public void tset1() {
-        String cpApk = "cp platforms/android/build/outputs/apk/android-release.apk /Users/jiangtao/IdeaProjects/ionicexecutor/src/main/resources/static";
+
+        String cpApk = "&&cp platforms/android/build/outputs/apk/android-release.apk " +
+                "/Users/jiangtao/IdeaProjects/ionicexecutor/src/main/resources/static&&" +
+                "echo 打包并拷贝完成，请回页首下载！";
+        String gitInfo = "&&git branch -v";
 
         String cmd = "ionic cordova platform rm android&&ionic cordova platform add android&&" +
-                "cp release-signing.properties platforms/android&&ionic cordova build --release android&&" + cpApk;
+                "cp release-signing.properties platforms/android&&ionic cordova build --release android&&" + cpApk + gitInfo;
 
         String[] cmds = cmd.split("&&");
         System.out.println(Arrays.deepToString(cmds));

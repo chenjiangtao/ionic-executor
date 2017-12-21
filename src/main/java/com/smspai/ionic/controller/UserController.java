@@ -28,19 +28,22 @@ public class UserController {
         boolean success = false;
         StringBuffer msg = new StringBuffer();
         logger.info("EXEC ACTION---->>>>" + action);
-        String cpApk = "cp platforms/android/build/outputs/apk/android-release.apk " +
-                "/Users/jiangtao/IdeaProjects/ionicexecutor/src/main/resources/static&&"+
+        String cpApk = "&&cp platforms/android/build/outputs/apk/android-release.apk " +
+                "/Users/jiangtao/IdeaProjects/ionicexecutor/src/main/resources/static&&" +
                 "echo 打包并拷贝完成，请回页首下载！";
+        String gitInfo = "&&git branch -v";
 
         if (action.equals("release")) {
-            cmd = "ionic cordova build --release android&&" + cpApk;
+            cmd = "ionic cordova build --release android" + cpApk + gitInfo;
         } else if (action.equals("rmall")) {
 //            cmd = "rm -rf node_modules plugins platforms";
         } else if (action.equals("add-platform-release")) {
             cmd = "ionic cordova platform rm android&&ionic cordova platform add android&&" +
-                    "cp release-signing.properties platforms/android&&ionic cordova build --release android&&" + cpApk;
-        }else if(action.equals("gitpull")){
-            cmd ="git pull";
+                    "cp release-signing.properties platforms/android&&ionic cordova build --release android" + cpApk + gitInfo;
+        } else if (action.equals("gitpull")) {
+            cmd = "git checkout master -f&&git pull";
+        } else if (action.equals("gitpull-ymy")) {
+            cmd = "git checkout ymy -f&&git pull";
         }
 
         String cmds[] = cmd.split("&&");

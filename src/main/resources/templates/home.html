@@ -18,7 +18,10 @@
         <ul class="navbar-header pull-right">
             <a id="gitpull" href="javascript:void(0);" class="btn btn-primary btn-sm">
                 <span class="glyphicon glyphicon-ok"></span>
-                git pull</a>
+                拉取master分支</a>
+            <a id="gitpull-ymy" href="javascript:void(0);" class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-ok"></span>
+                拉取小明分支</a>
             <a id="release" href="javascript:void(0);" class="btn btn-primary btn-sm">
                 <span class="glyphicon glyphicon-ok"></span>
                 仅打包</a>
@@ -33,17 +36,17 @@
 </nav>
 <div class="container">
     <h2 class="centered">ionic打包器:</h2>
-        <div>
-            下载：<a href="android-release.apk" download="android-release.apk" >android-release.apk</a>
+    <div>
+        下载：<a href="android-release.apk" download="android-release.apk">android-release.apk</a>
+    </div>
+    <fieldset>
+        <h3>添加cordova和npm包</h3>
+        <div class="form-group">
+            <textarea id="commands" class="form-control" placeholder="install or rm package" name="commands" rows="5">ionic</textarea>
         </div>
-        <fieldset>
-            <h3>添加cordova和npm包</h3>
-            <div class="form-group">
-                <textarea id="commands" class="form-control" placeholder="install or rm package" name="commands" rows="5"></textarea>
-            </div>
-            <a id="exec-cmd-bt" class="btn btn-lg btn-success btn-block" >执行命令</a>
-            <div id="exec-result"></div>
-        </fieldset>
+        <a id="exec-cmd-bt" class="btn btn-lg btn-success btn-block">执行命令</a>
+        <div id="exec-result"></div>
+    </fieldset>
 </div>
 </body>
 <script src="webjars/jquery/2.1.1/jquery.min.js"></script>

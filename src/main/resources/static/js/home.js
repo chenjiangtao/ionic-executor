@@ -106,9 +106,28 @@ $(document).ready(function () {
 
     });
 
+    $("#gitpull-ymy").click(function () {
+        tips.innerHTML = ("<h3>代码拉取中......</h3><br>");
+        $.ajax({
+            type: 'GET',
+            dataType: 'json', //返回json数据
+            url: '/api/exec/gitpull-ymy',
+            success: function (result) {
+                if (result.success) {
+                    tips.innerHTML = ("<h3>执行成功</h3><br>" + "<p>" + result.message + "</p>");
+                } else {
+                    tips.innerHTML = ("<h3>执行失败</h3><br>" + "<p>" + result.message + "</p>");
+                }
+            },
+            error: function () {
+                tips.innerHTML = ( "<h3>系统异常</h3><br>");
+            }
+        });
+    });
+
 
     $("#add-platform-release").click(function () {
-        tips.innerHTML = ("<h3>删除并重新打包中......</h3><br>");
+        tips.innerHTML = ("<h3>删除platform并重新打包中......</h3><br>");
         $.ajax({
             type: 'GET',
             dataType: 'json', //返回json数据
