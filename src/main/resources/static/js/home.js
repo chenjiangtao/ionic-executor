@@ -37,6 +37,9 @@ var info_prompt = function (message, time) {
 };
 
 
+
+
+
 $(document).ready(function () {
     // alert(JSON.stringify(data)); //调试用
     var tips = document.getElementById("exec-result");
