@@ -63,7 +63,7 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    @RequestMapping(value = "/exec/cmd", method = RequestMethod.POST)
+//    @RequestMapping(value = "/exec/cmd", method = RequestMethod.POST)
     public Object exec(HttpServletRequest request, String commands) {
         logger.info("COMMAND---->>>>" + commands);
         String msg;

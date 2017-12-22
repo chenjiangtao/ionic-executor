@@ -42,6 +42,7 @@ $(document).ready(function () {
     var tips = document.getElementById("exec-result");
 
     $("#exec-cmd-bt").click(function () {
+        alert("功能失效");
         var data = {};
         data['commands'] = $("#commands").val().trim();
         tips.innerHTML = ("<h3>命令执行中......</h3><br>" + data['commands']);
